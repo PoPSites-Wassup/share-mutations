@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\ShareMutations\MutationResolverBridges;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
-use PoPSitesWassup\ShareMutations\MutationResolvers\ShareByEmailMutationResolver;
 use PoPSitesWassup\FormMutations\MutationResolverBridges\AbstractFormComponentMutationResolverBridge;
+use PoPSitesWassup\ShareMutations\MutationResolvers\ShareByEmailMutationResolver;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class ShareByEmailMutationResolverBridge extends AbstractFormComponentMutationResolverBridge
 {
     protected ShareByEmailMutationResolver $shareByEmailMutationResolver;
 
     #[Required]
-    public function autowireShareByEmailMutationResolverBridge(
+    final public function autowireShareByEmailMutationResolverBridge(
         ShareByEmailMutationResolver $shareByEmailMutationResolver,
     ): void {
         $this->shareByEmailMutationResolver = $shareByEmailMutationResolver;
